@@ -1,0 +1,6 @@
+@if (isLoading) {
+<div>Loading...</div>
+} @else if (todo) {
+<p>{{ todo.id }} {{ todo.title }}</p>
+<a href="todos">Back</a>
+}
