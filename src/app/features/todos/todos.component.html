@@ -1,11 +1,11 @@
 @if (isLoading) {
 <div>Loading...</div>
 } @else {
-<ul>
+<mat-list>
   @for (todo of todos; track todo.id) {
-  <li>
+  <mat-list-item>
     <a href="/todo/{{ todo.id }}">{{ todo.id }} {{ todo.title }}</a>
-  </li>
+  </mat-list-item>
   }
-</ul>
+</mat-list>
 }

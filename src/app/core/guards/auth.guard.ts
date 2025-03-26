@@ -29,13 +29,15 @@ export class AuthGuard implements CanActivate {
         .pipe(
           map(() => true),
           catchError(() => {
-            this.router.navigate(['/login']);
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("refreshToken");
+            this.router.navigate(['/auth/login']);
             return of(false);
           })
         );
     }
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['/auth/login']);
     return false;
   }
 }

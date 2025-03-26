@@ -1,10 +1,11 @@
 import { Todo } from '../../shared/models/Todo';
 import { TodoService } from '../../shared/services/todo/todo.service';
 import { Component, OnInit } from '@angular/core';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-todos',
-  imports: [],
+  imports: [MatListModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
 })
