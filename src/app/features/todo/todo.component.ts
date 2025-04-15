@@ -2,11 +2,10 @@ import { Todo } from '../../shared/models/Todo';
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../../shared/services/todo/todo.service';
 import { ActivatedRoute } from '@angular/router';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-todo',
-  imports: [MatProgressSpinnerModule],
+  imports: [],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss',
 })
