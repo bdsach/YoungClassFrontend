@@ -7,10 +7,28 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth/auth.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core';
+
+
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  providers: [provideNativeDateAdapter()],
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatDatepickerModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

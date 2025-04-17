@@ -1,0 +1,32 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+$border-radius: 0.85rem;
+
+html {
+  color-scheme: light dark;
+  @include mat.theme((
+    color: mat.$violet-palette,
+    typography: Roboto,
+    density: 0
+  ));
+}
+
+div[matformfieldlineripple] {
+      display: none;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field {
+  border-radius: $border-radius;
+  padding: 0 $border-radius;
+}
+
+button[mat-flat-button] {
+  border-radius: $border-radius;
+  font-size: 1.2rem;
+}
+
+button.mdc-button {
+  padding: 1.5rem 1.8rem;
+}

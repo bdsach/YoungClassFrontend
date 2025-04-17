@@ -1,5 +1,15 @@
-@import url('./app/styles/colors.scss');
+@import url("./app/styles/colors.scss");
+@import url("./app/styles/material.scss");
+@import url("./app/styles/tailwind.scss");
+@import url("./app/styles/container.scss");
+@import url("./app/styles/custom.scss");
 
-@import url('./app/styles/material.scss');
+// @import "tailwindcss";
+// @theme {
+//     --color-mint-500: oklch(0.72 0.11 178);
+// }
 
-@import url('./app/styles/tailwind.scss');
+html,
+body {
+
+}
