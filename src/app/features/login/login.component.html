@@ -1,35 +1,44 @@
 <section class="container">
-  <h1 class="text-4xl font-bold text-center my-20">Login</h1>
-
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
+  <div class="grid grid-cols-2">
+    <div>Logo</div>
     <div>
-      <mat-form-field class="w-full">
-        <mat-label>Email</mat-label>
-        <input
-          disableRipple
-          matInput
-          id="email"
-          type="email"
-          formControlName="email"
-          placeholder="example@email.com"
-        />
-      </mat-form-field>
-    </div>
+      <h1 class="text-4xl text-mint-500 font-bold text-center my-20">Login</h1>
 
-    <div>
-      <mat-form-field class="w-full">
-        <mat-label for="password">Password</mat-label>
-        <input
-          disableRipple
-          matInput
-          id="password"
-          type="password"
-          formControlName="password"
-        />
-      </mat-form-field>
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="flex flex-col gap-5"
+      >
+        <div>
+          <mat-form-field class="w-full">
+            <mat-label>Email</mat-label>
+            <input
+              disableRipple
+              matInput
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="example@email.com"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field class="w-full">
+            <mat-label for="password">Password</mat-label>
+            <input
+              disableRipple
+              matInput
+              id="password"
+              type="password"
+              formControlName="password"
+            />
+          </mat-form-field>
+        </div>
+        <div class="text-center">
+          <button disableRipple mat-flat-button type="submit">Login</button>
+        </div>
+      </form>
     </div>
-    <div class="text-center">
-      <button mat-flat-button type="submit">Login</button>
-    </div>
-  </form>
+  </div>
 </section>

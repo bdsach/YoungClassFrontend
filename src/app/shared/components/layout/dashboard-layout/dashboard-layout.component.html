@@ -1,2 +1,26 @@
-<p>main layout</p>
-<router-outlet></router-outlet>
+<main class="container">
+  <header class="grid grid-cols-[200px_minmax(900px,_1fr)_100px] bg-blue-100">
+    <div><a>Classroom</a></div>
+    <div>Search</div>
+    <div>User Name</div>
+  </header>
+  <div class="grid grid-cols-[250px_minmax(900px,_1fr)_100px]">
+    <nav class="text-xl text-blue-600">
+      <ul class="list-none">
+        <li class="my-2">
+          <a class="block w-full px-2 py-3 bg-blue-500 text-white rounded-2xl">ห้องเรียน</a>
+        </li>
+        <li lass="my-2">
+          <a class="block w-full px-2 py-3 bg-blue-500 text-white rounded-2xl">รายงาน</a>
+        </li>
+        <li class="my-2">
+          <a class="block w-full px-2 py-3 bg-blue-500 text-white rounded-xl">ตั้งค่า</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <aside>right</aside>
+  </div>
+</main>
