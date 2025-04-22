@@ -1,26 +1,84 @@
-<main class="container">
-  <header class="grid grid-cols-[200px_minmax(900px,_1fr)_100px] bg-blue-100">
-    <div><a>Classroom</a></div>
-    <div>Search</div>
-    <div>User Name</div>
+<main class="container-xxl">
+  <header class="flex gap-8 border-r border-slate-200 py-5 pr-8">
+    <div class="min-w-[230px] text-5xl font-bold text-[var(--color-header)]">
+      <a>LOGO</a>
+    </div>
+    <div class="grid w-full grid-cols-3 gap-8">
+      <div class="col-span-2 flex-1 items-center border-b border-slate-200">
+        <p>Search</p>
+      </div>
+      <div class="col-span-1">
+        <div class="flex items-center justify-end gap-2">
+          <div class="h-12 w-12 overflow-hidden rounded-full bg-gray-100">
+            <img src="https://i.pravatar.cc/150?img=47" />
+          </div>
+          <p class="font-medium text-[var(--color-header)]">John D.</p>
+        </div>
+      </div>
+    </div>
   </header>
-  <div class="grid grid-cols-[250px_minmax(900px,_1fr)_100px]">
-    <nav class="text-xl text-blue-600">
+  <div class="grid grid-cols-[230px_minmax(auto,_1fr)] gap-8">
+    <nav class="h-dvh border-r border-slate-100 pr-8 text-xl">
       <ul class="list-none">
         <li class="my-2">
-          <a class="block w-full px-2 py-3 bg-blue-500 text-white rounded-2xl">ห้องเรียน</a>
+          <a
+            routerLink="/classrooms"
+            class="block flex w-full gap-4 rounded-2xl bg-[var(--color-primary-bg-subtle)] px-4 pt-4 pb-3 font-medium text-[var(--color-primary)]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M11 4.68v3.88a2.45 2.45 0 0 1-1.509 2.258A2.4 2.4 0 0 1 8.56 11H4.68a2.44 2.44 0 0 1-2.43-2.44V4.69a2.44 2.44 0 0 1 2.43-2.44h3.88A2.44 2.44 0 0 1 11 4.68m10.75.01v3.87a2.4 2.4 0 0 1-.71 1.72a2.38 2.38 0 0 1-1.72.72h-3.88a2.45 2.45 0 0 1-2.256-1.502A2.4 2.4 0 0 1 13 8.56V4.69a2.4 2.4 0 0 1 .72-1.72a2.42 2.42 0 0 1 1.72-.72h3.88a2.44 2.44 0 0 1 2.43 2.44M11 15.45v3.87a2.44 2.44 0 0 1-2.44 2.43H4.68a2.45 2.45 0 0 1-1.72-.71a2.4 2.4 0 0 1-.71-1.72v-3.87a2.4 2.4 0 0 1 .71-1.72A2.47 2.47 0 0 1 4.68 13h3.88A2.46 2.46 0 0 1 11 15.45m10.75 1.93A4.37 4.37 0 1 1 17.37 13a4.4 4.4 0 0 1 4.049 2.707c.22.53.332 1.099.331 1.673"
+              />
+            </svg>
+            <span>ห้องเรียน</span>
+          </a>
         </li>
         <li lass="my-2">
-          <a class="block w-full px-2 py-3 bg-blue-500 text-white rounded-2xl">รายงาน</a>
+          <a
+            class="block flex w-full gap-4 rounded-2xl px-4 pt-4 pb-3 font-medium text-[var(--color-header)]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M9 17H7v-7h2zm4 0h-2V7h2zm4 0h-2v-4h2z"
+              />
+            </svg>
+            <span>รายงาน</span>
+          </a>
         </li>
         <li class="my-2">
-          <a class="block w-full px-2 py-3 bg-blue-500 text-white rounded-xl">ตั้งค่า</a>
+          <a
+            class="block flex w-full gap-4 rounded-2xl px-4 pt-4 pb-3 font-medium text-[var(--color-header)]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="m21.51 14.59l-1.25-1.32a7.9 7.9 0 0 0-.06-2.9l1.22-1.32a.76.76 0 0 0 .14-.79a10.3 10.3 0 0 0-2.2-3.35a.74.74 0 0 0-.72-.19l-1.84.47a8.5 8.5 0 0 0-1.83-1l-.45-1.72a.73.73 0 0 0-.59-.55a10 10 0 0 0-1.89-.17a9.4 9.4 0 0 0-2.35.31a.73.73 0 0 0-.53.53l-.48 1.77a8.2 8.2 0 0 0-1.52.88l-1.82-.45a.73.73 0 0 0-.72.21a10 10 0 0 0-2.23 3.62a.76.76 0 0 0 .16.77l1.26 1.31q-.096.631-.1 1.27c0 .3 0 .6.05.9l-1.31 1.46a.75.75 0 0 0-.16.73a10 10 0 0 0 2 3.59a.75.75 0 0 0 .76.24l1.72-.44a8 8 0 0 0 2 1.23l.5 1.79a.77.77 0 0 0 .56.53c.721.163 1.459.247 2.2.25q.886-.01 1.76-.17a.75.75 0 0 0 .59-.53l.47-1.69a8.1 8.1 0 0 0 2.38-1.34l1.76.4a.74.74 0 0 0 .73-.24a10.1 10.1 0 0 0 2-3.34a.76.76 0 0 0-.21-.75m-9.39 1.27a3.81 3.81 0 1 1-.021-7.619a3.81 3.81 0 0 1 .02 7.62"
+              />
+            </svg>
+            <span>ตั้งค่า</span>
+          </a>
         </li>
       </ul>
     </nav>
-    <main>
+    <div>
       <router-outlet></router-outlet>
-    </main>
-    <aside>right</aside>
+    </div>
   </div>
 </main>
