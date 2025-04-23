@@ -1,15 +1,24 @@
+@use 'sass:color';
+
+$primary: rgb(110, 62, 214);
+$header: rgb(20, 10, 55);
+$body: rgb(107, 100, 128);
+
+$background-top: rgb(255, 255, 255);
+$background-bottom: rgb(243, 243, 255);
+
+$primary-bg-subtle: color.mix(#fff, $primary, 95%);
+$primary-border-subtle: color.mix(#fff, $primary, 60%);
+
+
 :root {
+    --color-primary: #{$primary};
+    --color-primary-bg-subtle: #{$primary-bg-subtle};
+    --color-primary-border-subtle: #{$primary-border-subtle};
 
-    --color-primary: #2f2d52;
-    --color-secondary: #F9FBFC;
-    --color-accent: #B2F4DB;
-    --color-body: #A8A8AB;
+    --color-header: #{$header};
+    --color-body: #{$body};
 
-
-
-    --color-tertiary: #ffff;
-    --color-neutral: #ffff;
-    --color-neutral-variant: #ffff;
-    --color-error: #ffff;
-
+    --color-background-top: #{$background-top};
+    --color-background-bottom: #{$background-bottom};
 }

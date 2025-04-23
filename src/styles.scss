@@ -1,15 +1,21 @@
+@import url("./app/styles/fonts.scss");
 @import url("./app/styles/colors.scss");
 @import url("./app/styles/material.scss");
 @import url("./app/styles/tailwind.scss");
 @import url("./app/styles/container.scss");
 @import url("./app/styles/custom.scss");
 
-// @import "tailwindcss";
-// @theme {
-//     --color-mint-500: oklch(0.72 0.11 178);
-// }
-
 html,
 body {
+}
 
+body {
+    font-family: var(--font-ibm-plex-sans-thai);
+    background: linear-gradient(
+        to bottom,
+        var(--color-background-bottom) 0%,
+        var(--color-background-top) 5%,
+        var(--color-background-top) 60%,
+        var(--color-background-bottom) 100%
+    );
 }

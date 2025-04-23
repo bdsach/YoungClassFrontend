@@ -1,5 +1,25 @@
-@use "tailwindcss";
+@use "tailwindcss"; 
+
 
 @theme {
-    --color-mint-500: var(--color-mint-500);
+    --color-primary: var(--color-primary);
+    --color-primary-subtle: var(--color-primary-bg-subtle);
+    --color-header: var(--color-header);
+    --color-body: var(--color-body);
+
+
+    --font-bai-jamjuree: var(--font-bai-jamjuree);
+    --font-ibm-plex-sans-thai: var(--font-ibm-plex-sans-thai);
+    --font-noto-serif-thai: var(--font-noto-serif-thai);
+    --font-noto-sans-thai: var(--font-noto-sans-thai);
+    --font-noto-sans-thai-looped: var(--font-noto-serif-thai);
+
+
+    
+
+    --shadow-card: rgba(0, 0, 0, 0.060) 0px 4px 12px;
+    --shadow-sidebar: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    --shadow-input: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    --shadow-button: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
 }
