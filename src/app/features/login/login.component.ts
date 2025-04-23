@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const isLoggedIn = !!localStorage.getItem('accessToken');
     if (isLoggedIn) {
-      this.router.navigate(['/todos']);
+      this.router.navigate(['/classrooms']);
     }
   }
 

@@ -21,7 +21,7 @@ export class AuthService {
           localStorage.setItem('accessToken', response.accessToken);
           localStorage.setItem('refreshToken', response.refreshToken);
 
-          this.router.navigate(['/todos']);
+          this.router.navigate(['/classrooms']);
         },
         error: (err) => {
           alert('Login failed. Please try again.');
