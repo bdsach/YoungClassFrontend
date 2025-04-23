@@ -1,24 +1,38 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 $border-radius: 0.85rem;
 
+:root {
+  @include mat.dialog-overrides(
+    (
+      container-color: #ffffff,
+      subhead-color: var(--color-header),
+      subhead-font: var(--font-noto-sans-thai),
+      supporting-text-font: var(--font-noto-sans-thai),
+      supporting-text-size: 1.1rem
+    )
+  );
+}
+
 html {
   // color-scheme: light dark;
-  @include mat.theme((
-    color: (
-      primary: mat.$violet-palette,
-      tertiary: mat.$orange-palette,
-      theme-type: light,
-    ),
-    typography: Roboto,
-    density: 0
-  ));
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$violet-palette,
+        tertiary: mat.$orange-palette,
+        theme-type: light
+      ),
+      typography: Roboto,
+      density: 0
+    )
+  );
 }
 
 div[matformfieldlineripple] {
-      display: none;
+  display: none;
 }
 
 .mat-mdc-text-field-wrapper.mdc-text-field {

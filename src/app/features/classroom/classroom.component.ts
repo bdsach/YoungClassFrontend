@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-import {  MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 
 interface Student {
   id: number;
@@ -40,11 +41,26 @@ const STUDENTS_DATA: Student[] = [
 })
 export class ClassroomComponent {
   readonly id = input<string>();
+  readonly dialog = inject(MatDialog);
 
   get idValue(): string {
-    return this.id() ?? ""; // unwrap the signal
+    return this.id() ?? '';
   }
 
+  openDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string,
+  ): void {
+    this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        animal: 'panda',
+      },
+      autoFocus: false
+    });
+  }
 
   displayedColumns: string[] = ['No', 'FirstName', 'LastName'];
   dataSource = STUDENTS_DATA;
