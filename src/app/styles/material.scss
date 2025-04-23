@@ -14,6 +14,13 @@ $border-radius: 0.85rem;
       supporting-text-size: 1.1rem
     )
   );
+  @include mat.button-overrides(
+    (
+      outlined-label-text-color: var(--color-primary),
+      outlined-outline-color: var(--color-primary),
+      outlined-state-layer-color: var(--color-primary)
+    )
+  );
 }
 
 html {
@@ -40,12 +47,31 @@ div[matformfieldlineripple] {
   padding: 0 $border-radius;
 }
 
-button[mat-flat-button] {
-  border-radius: $border-radius;
-  font-size: 1.2rem;
-}
+// button[mat-flat-button] {
+//   border-radius: $border-radius;
+//   font-size: 1.2rem;
+// }
 
 button.mdc-button {
-  padding: 1.5rem 1.8rem;
+  padding: 1.3rem 1.8rem;
   font-family: var(--font-ibm-plex-sans-thai);
+}
+
+button[dialog-cancel-btn].mat-mdc-outlined-button:not(:disabled) {
+  background-color: transparent;
+  border: 1px solid black;
+  .mdc-button__label {
+    color: black;
+  }
+  &:hover {
+    background-color: rgb(0, 0, 0, 0.009);
+  }
+}
+
+button[dialog-confirm-btn].mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #dc3646;
+  border: 1px solid #dc3646;
+  .mdc-button__label {
+    color: white;
+  }
 }

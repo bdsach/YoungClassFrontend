@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>ลบไฟล์</h2>
 <mat-dialog-content>ต้องการจะลบจริงๆ อะ ? </mat-dialog-content>
 <mat-dialog-actions>
-  <button disableRipple mat-button mat-dialog-close>ยกเลิก</button>
-  <button disableRipple mat-button mat-dialog-close>แน่นอน ลบเลย</button>
+  <button disableRipple mat-stroked-button mat-dialog-close dialog-cancel-btn>ยกเลิก</button>
+  <button disableRipple mat-flat-button mat-dialog-close [disabled]="false" dialog-confirm-btn>แน่นอน ลบเลย</button>
 </mat-dialog-actions>
