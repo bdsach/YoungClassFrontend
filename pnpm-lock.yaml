@@ -38,6 +38,24 @@ importers:
       '@angular/router':
         specifier: ^19.1.0
         version: 19.2.3(@angular/common@19.2.3(@angular/core@19.2.3(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.3(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.2.3(@angular/animations@19.2.3(@angular/core@19.2.3(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.2.3(@angular/core@19.2.3(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.3(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
+      '@fontsource/bai-jamjuree':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/ibm-plex-sans-thai':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/mali':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/noto-sans-thai':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/noto-sans-thai-looped':
+        specifier: ^5.2.6
+        version: 5.2.6
+      '@fontsource/noto-serif-thai':
+        specifier: ^5.2.5
+        version: 5.2.5
       rxjs:
         specifier: ~7.8.0
         version: 7.8.2
@@ -959,6 +977,24 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/bai-jamjuree@5.2.5':
+    resolution: {integrity: sha512-ccXj0BWeQWmnTThSwzwWzqzBkcUVK4TXR98j0PiA5pfQoBXZxNyDmY9F7PbF7h+gR953hJiFS6vJwuwleEEkxw==}
+
+  '@fontsource/ibm-plex-sans-thai@5.2.5':
+    resolution: {integrity: sha512-mezCK1oeKPlShQp7yat8kXbzn+FaJcBpd6RrMLgpDvz0EFbdt9p3jQDfSTwG84p04T0H2llPklqXQfzqmYf69g==}
+
+  '@fontsource/mali@5.2.5':
+    resolution: {integrity: sha512-AjKIpdb3OoDFBPgNioFn+t2gJbhhe+rr33FTNaHR92VeuzSCxwXEWEHixsW6SqdWvP7GoVqDPcjZcKGH84dmjA==}
+
+  '@fontsource/noto-sans-thai-looped@5.2.6':
+    resolution: {integrity: sha512-JjwtStUmMxEoqSrh6rUas6RNkem0R5ph0C0D7XEyouYIbhiF3dFusMYc8Qzh+WLXptI7aCq04oTSJSrV6BOZqg==}
+
+  '@fontsource/noto-sans-thai@5.2.5':
+    resolution: {integrity: sha512-uUTitMoslTT139P69zf9F1+OYGO0ViIoFHHjCqSOrhJlvsERKM+1+5r9637qD6xvoiw57dmbrvYO/Lad2qJByQ==}
+
+  '@fontsource/noto-serif-thai@5.2.5':
+    resolution: {integrity: sha512-wbUnzNE19MwX5/n/CxD4n5jfhRv6KxFIM0iu9yhZVVrplDSy2EQwleoZj67el/1dv2XVSnNQF1zlDeJyGmk8fg==}
 
   '@inquirer/checkbox@4.1.4':
     resolution: {integrity: sha512-d30576EZdApjAMceijXA5jDzRQHT/MygbC+J8I7EqA6f/FRpYxlRtRJbHF8gHeWYeSdOuTEJqonn7QLB1ELezA==}
@@ -5500,6 +5536,18 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.1':
     optional: true
+
+  '@fontsource/bai-jamjuree@5.2.5': {}
+
+  '@fontsource/ibm-plex-sans-thai@5.2.5': {}
+
+  '@fontsource/mali@5.2.5': {}
+
+  '@fontsource/noto-sans-thai-looped@5.2.6': {}
+
+  '@fontsource/noto-sans-thai@5.2.5': {}
+
+  '@fontsource/noto-serif-thai@5.2.5': {}
 
   '@inquirer/checkbox@4.1.4(@types/node@22.13.11)':
     dependencies:
