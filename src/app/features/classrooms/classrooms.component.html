@@ -1,0 +1,52 @@
+<div class="grid grid-cols-3 gap-8">
+  <div class="col-span-2 mt-8">
+    <div class="flex flex-col gap-3 pb-10">
+      <h1 class="text-header text-3xl font-semibold">ห้องเรียนทั้งหมด</h1>
+      <p class="text-header text-base font-light">
+        สวัสดี John อย่าลืมตรวจการบ้านนะ
+      </p>
+    </div>
+    <div class="grid grid-cols-3 gap-8">
+      @for (classroom of classrooms; track classroom.id) {
+        <a [routerLink]="['/classroom', classroom.id]">
+          <div
+            class="shadow-card relative flex h-40 flex-col items-center justify-center rounded-xl bg-white text-xl font-bold"
+          >
+            <div class="text-header my-2.5 text-lg font-semibold">
+              {{ classroom.subject }}
+            </div>
+            <div class="items-top flex gap-2 text-[var(--color-body)]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6m4.735 6c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139z"
+                />
+              </svg>
+              <span class="text-base"> {{ classroom.studentCount }} คน </span>
+            </div>
+
+            <div class="absolute top-3 left-3">
+              <div
+                class="rounded-lg bg-sky-50 px-3 py-1 text-sm font-medium text-sky-600"
+              >
+                {{ classroom.level }}
+              </div>
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+  <div class="col-span-1 pt-4">
+    <div
+      class="shadow-sidebar flex h-full min-h-60 items-center justify-center rounded-2xl bg-white"
+    >
+      Right Side
+    </div>
+  </div>
+</div>
