@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
-import { TodoComponent } from './features/todo/todo.component';
-import { TodosComponent } from './features/todos/todos.component';
 import { NotfoundComponent } from './features/notfound/notfound.component';
 import { LoginComponent } from './features/login/login.component';
 import { DashboardLayoutComponent } from './shared/components/layout/dashboard-layout/dashboard-layout.component';
 import { AuthLayoutComponent } from './shared/components/layout/auth-layout/auth-layout.component';
+import { ClassroomsComponent } from './features/classrooms/classrooms.component';
+import { ClassroomComponent } from './features/classroom/classroom.component';
+import { AttendanceComponent } from './features/classroom/attendance/attendance.component';
 
 export const routes: Routes = [
   {
@@ -28,14 +29,25 @@ export const routes: Routes = [
     component: DashboardLayoutComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'todos', component: TodosComponent },
       {
-        path: 'todo/:id',
-        component: TodoComponent,
+        path: 'classrooms',
+        component: ClassroomsComponent,
       },
       {
-        path: 'todo',
-        redirectTo: 'todos',
+        path: 'classroom/:id',
+        component: ClassroomComponent,
+      },
+      {
+        path: 'classroom/:id/attendance',
+        component: AttendanceComponent,
+      },
+      {
+        path: 'classroom/:id/timer',
+        component: AttendanceComponent,
+      },
+      {
+        path: 'classroom',
+        redirectTo: 'classrooms',
         pathMatch: 'full',
       },
     ],
