@@ -11,7 +11,7 @@ $border-radius: 0.85rem;
       subhead-color: var(--color-header),
       subhead-font: var(--font-noto-sans-thai),
       supporting-text-font: var(--font-noto-sans-thai),
-      supporting-text-size: 1.1rem,
+      supporting-text-size: 1.1rem
     )
   );
   @include mat.button-overrides(
@@ -25,7 +25,7 @@ $border-radius: 0.85rem;
     (
       label-text-font: var(--font-noto-sans-thai),
       label-text-weight: 600,
-      active-indicator-color: var(--color-primary),
+      active-indicator-color: var(--color-primary)
     )
   );
 }
@@ -85,9 +85,14 @@ button[dialog-confirm-delete-btn].mat-mdc-unelevated-button:not(:disabled) {
 }
 
 button[dialog-import-csv-btn] {
-  background-color: #00D492;
-  border: 1px solid #00D492;
+  border: 1px solid #00d492;
   .mdc-button__label {
-    color: white;
+    color: #00d492;
   }
+  .mat-mdc-button-persistent-ripple::before {
+    content: none;
+  }
+}
+button[dialog-import-csv-btn]:hover {
+  background-color: rgb(0, 212, 146, 0.08) !important;
 }
