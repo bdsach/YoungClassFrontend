@@ -11,7 +11,7 @@ $border-radius: 0.85rem;
       subhead-color: var(--color-header),
       subhead-font: var(--font-noto-sans-thai),
       supporting-text-font: var(--font-noto-sans-thai),
-      supporting-text-size: 1.1rem
+      supporting-text-size: 1.1rem,
     )
   );
   @include mat.button-overrides(
@@ -53,8 +53,9 @@ div[matformfieldlineripple] {
 // }
 
 button.mdc-button {
-  padding: 1.3rem 1.8rem;
+  // padding: 1.3rem 1.8rem;
   font-family: var(--font-ibm-plex-sans-thai);
+  border: 1px solid var(--color-primary);
 }
 
 button[dialog-cancel-btn].mat-mdc-outlined-button:not(:disabled) {
@@ -68,9 +69,17 @@ button[dialog-cancel-btn].mat-mdc-outlined-button:not(:disabled) {
   }
 }
 
-button[dialog-confirm-btn].mat-mdc-unelevated-button:not(:disabled) {
+button[dialog-confirm-delete-btn].mat-mdc-unelevated-button:not(:disabled) {
   background-color: #dc3646;
   border: 1px solid #dc3646;
+  .mdc-button__label {
+    color: white;
+  }
+}
+
+button[dialog-import-csv-btn] {
+  background-color: #00D492;
+  border: 1px solid #00D492;
   .mdc-button__label {
     color: white;
   }
