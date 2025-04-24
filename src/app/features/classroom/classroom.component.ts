@@ -1,10 +1,11 @@
 import { Component, inject, input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ImportStudentDialogComponent } from './import-student-dialog/import-student-dialog.component';
 
-interface Student {
+export interface Student {
   id: number;
   firstName: string;
   lastName: string;
@@ -43,6 +44,8 @@ export class ClassroomComponent {
   readonly id = input<string>();
   readonly dialog = inject(MatDialog);
 
+  students: Student[] = STUDENTS_DATA;
+
   get idValue(): string {
     return this.id() ?? '';
   }
@@ -62,7 +65,16 @@ export class ClassroomComponent {
     });
   }
 
-  displayedColumns: string[] = ['No', 'FirstName', 'LastName'];
-  dataSource = STUDENTS_DATA;
-  students = STUDENTS_DATA;
+  openCreateStudentDialog(
+    enterAnimationDuration: string = '150ms',
+    exitAnimationDuration: string = '250ms',
+  ): void {
+    this.dialog.open(ImportStudentDialogComponent, {
+      minWidth: '800px',
+      height: '400px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      autoFocus: false
+    });
+  }
 }
