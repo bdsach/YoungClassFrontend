@@ -21,6 +21,13 @@ $border-radius: 0.85rem;
       outlined-state-layer-color: var(--color-primary)
     )
   );
+  @include mat.tabs-overrides(
+    (
+      label-text-font: var(--font-noto-sans-thai),
+      label-text-weight: 600,
+      active-indicator-color: var(--color-primary),
+    )
+  );
 }
 
 html {

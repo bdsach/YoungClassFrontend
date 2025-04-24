@@ -1,58 +1,57 @@
 <div class="mt-8 grid grid-cols-3 gap-8">
   <section class="col-span-2">
-    <div class="section flex flex-col gap-3 pb-10">
-      <h1 class="text-3xl font-semibold">ห้องเรียน {{ id() }}</h1>
-      <div>
-        @for (student of students; track student.id) {
-          <div
-            class="group hover:border-primary hover:bg-primary-subtle my-3 grid cursor-pointer grid-cols-12 items-center rounded-lg border-[1px] border-slate-200 p-2 transition-all duration-300 hover:shadow"
-          >
-            <div class="col-span-1 text-center">
-              {{ student.id }}
-            </div>
-            <div class="col-span-1">
-              <img
-                src="https://i.pravatar.cc/150?img=2"
-                class="h-10 w-10 overflow-hidden rounded-full"
-              />
-            </div>
-            <div class="col-span-3">
-              {{ student.firstName }}
-            </div>
-            <div class="col-span-3">
-              {{ student.lastName }}
-            </div>
-            <div class="col-span-3 col-start-10">
+    <mat-tab-group animationDuration="400ms" dynamicHeight disableRipple>
+      <mat-tab label="รายชื่อนักเรียน">
+        <div class="section flex flex-col gap-3 pb-10">
+          <!-- <h1 class="text-3xl font-semibold">ห้องเรียน {{ id() }}</h1> -->
+          <div>
+            @for (student of students; track student.id) {
               <div
-                class="flex justify-end gap-4 pr-2 opacity-0 transition-all duration-300 group-hover:opacity-100"
+                class="group hover:border-primary hover:bg-primary-subtle my-3 grid cursor-pointer grid-cols-12 items-center rounded-lg border-[1px] border-slate-200 p-2 transition-all duration-300 hover:shadow"
               >
-                <p class="text-primary text-sm font-medium">
-                  คลิกเพื่อดูข้อมูลนักเรียน
-                </p>
+                <div class="col-span-1 text-center">
+                  {{ student.id }}
+                </div>
+                <div class="col-span-1">
+                  <img
+                    src="https://i.pravatar.cc/150?img=2"
+                    class="h-10 w-10 overflow-hidden rounded-full"
+                  />
+                </div>
+                <div class="col-span-3">
+                  {{ student.firstName }}
+                </div>
+                <div class="col-span-3">
+                  {{ student.lastName }}
+                </div>
+                <div class="col-span-3 col-start-10">
+                  <div
+                    class="flex justify-end gap-4 pr-2 opacity-0 transition-all duration-300 group-hover:opacity-100"
+                  >
+                    <p class="text-primary text-sm font-medium">
+                      คลิกเพื่อดูข้อมูลนักเรียน
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            }
           </div>
-        }
-      </div>
-
-      <!-- <div class="grid grid-cols-3 gap-8">
-        @for (student of dataSource; track student.id) {
-          <div
-            class="shadow-card col-span-1 flex h-40 flex-col items-center justify-center rounded-2xl border border-slate-200"
-          >
-            <div
-              class="mb-3 h-12 w-12 overflow-hidden rounded-full bg-slate-200"
-            >
-              <img src="https://i.pravatar.cc/150?img=2" />
-            </div>
-            <p class="text-header text-base text-lg font-medium">
-              {{ student.firstName }}&nbsp;&nbsp;&nbsp;{{ student.lastName }}
-            </p>
-            <p class="text-body text-base">เลขที่ {{ student.id }}</p>
+        </div>
+      </mat-tab>
+      <mat-tab disabled="false" label="กลุ่ม">
+        <div class="mt-3 grid grid-cols-2 gap-6 p-2">
+          <div class="col-span-1 rounded-lg border border-slate-300 h-40 flex items-center justify-center">
+            <p class="text-center text-lg">กลุ่ม 1</p>
           </div>
-        }
-      </div> -->
-    </div>
+          <div class="col-span-1 rounded-lg border border-slate-300 h-40 flex items-center justify-center">
+            <p class="text-center text-lg">กลุ่ม 2</p>
+          </div>
+          <div class="col-span-1 rounded-lg border border-slate-300 h-40 flex items-center justify-center">
+            <p class="text-center text-lg">กลุ่ม 3</p>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </section>
 
   <aside class="min-w-[200px] flex-0">

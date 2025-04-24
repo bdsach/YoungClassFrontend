@@ -1,5 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
@@ -36,7 +37,7 @@ const STUDENTS_DATA: Student[] = [
 
 @Component({
   selector: 'app-classroom',
-  imports: [RouterModule, MatTableModule],
+  imports: [RouterModule, MatTableModule, MatTabsModule],
   templateUrl: './classroom.component.html',
   styleUrl: './classroom.component.scss',
 })
@@ -44,7 +45,9 @@ export class ClassroomComponent {
   readonly id = input<string>();
   readonly dialog = inject(MatDialog);
 
+
   students: Student[] = STUDENTS_DATA;
+  totalGroup: number = 3;
 
   get idValue(): string {
     return this.id() ?? '';
@@ -61,7 +64,7 @@ export class ClassroomComponent {
       data: {
         animal: 'panda',
       },
-      autoFocus: false
+      autoFocus: false,
     });
   }
 
@@ -74,7 +77,7 @@ export class ClassroomComponent {
       height: '400px',
       enterAnimationDuration,
       exitAnimationDuration,
-      autoFocus: false
+      autoFocus: false,
     });
   }
 }
