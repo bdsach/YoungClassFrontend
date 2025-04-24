@@ -10,16 +10,16 @@
       @for (classroom of classrooms; track classroom.id) {
         <a [routerLink]="['/classroom', classroom.id]">
           <div
-            class="shadow-card relative flex h-40 flex-col items-center justify-center rounded-xl bg-white text-xl font-bold"
+            class="shadow-card relative flex h-44 flex-col rounded-xl bg-white px-4 text-xl font-bold"
           >
-            <div class="text-header my-2.5 text-lg font-semibold">
+            <div class="mt-14 text-lg font-semibold text-header">
               {{ classroom.subject }}
             </div>
-            <div class="items-top flex gap-2 text-[var(--color-body)]">
+            <div class="items-top my-2 flex gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -27,12 +27,28 @@
                   d="M8 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6m4.735 6c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139z"
                 />
               </svg>
-              <span class="text-base"> {{ classroom.studentCount }} คน </span>
+              <span class="text-sm text-header"> {{ classroom.studentCount }}</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <div class="items-top flex gap-2 text-sm font-medium text-sky-600">
+                2/10 งาน
+              </div>
+              <div class="relative">
+                <div class="h-1 w-full bg-sky-50 absolute rounded-full"></div>
+                <div class="h-1 w-89/100 bg-sky-500 absolute rounded-full"></div>
+              </div>
             </div>
 
             <div class="absolute top-3 left-3">
               <div
-                class="rounded-lg bg-sky-50 px-3 py-1 text-sm font-medium text-sky-600"
+                class="h-8 w-8 rounded-full bg-slate-800/15 text-sm font-medium text-sky-600"
+              ></div>
+            </div>
+
+            <div class="absolute top-3 right-3">
+              <div
+                class="rounded-full bg-sky-100 px-3 py-1 text-sm font-medium text-sky-600"
               >
                 {{ classroom.level }}
               </div>
