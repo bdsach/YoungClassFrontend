@@ -1,1 +1,10 @@
-<p>timer works!</p>
+<div>
+  <countdown #cd [config]="{ leftTime: 30, demand: true }" />
+  <div class="flex gap-4">
+    <button (click)="cd.begin()" class="bg-teal-500 px-4 py-2">เริ่ม</button>
+    <button (click)="cd.stop()" class="bg-red-600 px-4 py-2">หยุด</button>
+    <button (click)="cd.restart()" class="bg-yellow-500 px-4 py-2">
+      รีเซ็ต
+    </button>
+  </div>
+</div>

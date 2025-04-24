@@ -7,6 +7,7 @@ import { AuthLayoutComponent } from './shared/components/layout/auth-layout/auth
 import { ClassroomsComponent } from './features/classrooms/classrooms.component';
 import { ClassroomComponent } from './features/classroom/classroom.component';
 import { AttendanceComponent } from './features/classroom/attendance/attendance.component';
+import { TimerComponent } from './features/classroom/timer/timer.component';
 
 export const routes: Routes = [
   {
@@ -43,7 +44,7 @@ export const routes: Routes = [
       },
       {
         path: 'classroom/:id/timer',
-        component: AttendanceComponent,
+        component: TimerComponent,
       },
       {
         path: 'classroom',
