@@ -7,62 +7,76 @@
       </p>
     </div>
     <div class="grid grid-cols-3 gap-8">
-      @for (classroom of classrooms; track classroom.id) {
-        <a [routerLink]="['/classroom', classroom.id]">
-          <div
-            class="shadow-card relative flex h-44 flex-col rounded-xl bg-white px-4 text-xl font-bold"
-          >
-            <div class="mt-14 text-lg font-semibold text-header">
-              {{ classroom.subject }}
-            </div>
-            <div class="items-top my-2 flex gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill="currentColor"
-                  d="M8 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6m4.735 6c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139z"
-                />
-              </svg>
-              <span class="text-sm text-header"> {{ classroom.studentCount }}</span>
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <div class="items-top flex gap-2 text-sm font-medium text-sky-600">
-                2/10 งาน
+      @defer (when !isLoading) {
+        @for (classroom of classrooms; track classroom.id) {
+          <a [routerLink]="['/classroom', classroom.id]">
+            <div
+              class="shadow-card relative flex h-44 flex-col rounded-xl bg-white px-4 text-xl font-bold"
+            >
+              <div class="text-header mt-14 line-clamp-1 text-lg font-medium">
+                {{ classroom.name }}
               </div>
-              <div class="relative">
-                <div class="h-1 w-full bg-sky-50 absolute rounded-full"></div>
-                <div class="h-1 w-89/100 bg-sky-500 absolute rounded-full"></div>
+              <div class="items-top my-2 flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6m4.735 6c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139z"
+                  />
+                </svg>
+                <span class="text-header text-sm"> 12 </span>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <div
+                  class="items-top flex gap-2 text-sm font-medium text-sky-600"
+                >
+                  2/10 งาน
+                </div>
+                <div class="relative">
+                  <div class="absolute h-1 w-full rounded-full bg-sky-50"></div>
+                  <div
+                    class="absolute h-1 w-69/100 rounded-full bg-sky-500"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="absolute top-3 left-3">
+                <div
+                  class="h-8 w-8 rounded-full bg-slate-800/15 text-sm font-medium text-sky-600"
+                ></div>
+              </div>
+
+              <div class="absolute top-3 right-3">
+                <div
+                  class="rounded-full bg-sky-100 px-3 py-1 text-sm font-medium text-sky-600"
+                >
+                  <!-- {{ classroom.level }} -->
+                  ป.2/3
+                </div>
               </div>
             </div>
-
-            <div class="absolute top-3 left-3">
-              <div
-                class="h-8 w-8 rounded-full bg-slate-800/15 text-sm font-medium text-sky-600"
-              ></div>
-            </div>
-
-            <div class="absolute top-3 right-3">
-              <div
-                class="rounded-full bg-sky-100 px-3 py-1 text-sm font-medium text-sky-600"
-              >
-                {{ classroom.level }}
-              </div>
-            </div>
-          </div>
-        </a>
+          </a>
+        }
+        
+      } @placeholder {
+        <div class="col-span-3 flex justify-center">
+          <p class="text-2xl font-medium animate-pulse">Loading...</p>
+        </div>
       }
     </div>
   </div>
   <div class="col-span-1 pt-4">
     <div
-      class="shadow-sidebar flex h-full min-h-60 items-center justify-center rounded-2xl bg-white"
+      class="shadow-sidebar flex h-full min-h-60 flex-col items-center justify-center gap-3 rounded-2xl bg-white"
     >
-      Right Side
+      <div>Right Side</div>
+      <button mat-button (click)="createClassroom()">Create</button>
+      <button mat-button (click)="logout()">Log out</button>
     </div>
   </div>
 </div>
