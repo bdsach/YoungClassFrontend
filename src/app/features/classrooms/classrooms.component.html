@@ -1,11 +1,15 @@
 <div class="grid grid-cols-3 gap-8">
   <div class="col-span-2 mt-8">
-    <div class="flex flex-col gap-3 pb-10">
-      <h1 class="text-header text-3xl font-semibold">ห้องเรียนทั้งหมด</h1>
-      <p class="text-header text-base font-light">
-        สวัสดี John อย่าลืมตรวจการบ้านนะ
-      </p>
+    <div class="flex justify-between items-end mb-10">
+      <div class="flex flex-col gap-3">
+        <h1 class="text-header text-3xl font-semibold">ห้องเรียนทั้งหมด</h1>
+        <p class="text-header text-base font-light">
+          สวัสดี John อย่าลืมตรวจการบ้านนะ
+        </p>
+      </div>
+      <button mat-flat-button disableRipple (click)="openCreateDialog('150ms', '250ms')" >สร้างห้องเรียน</button>
     </div>
+
     <div class="grid grid-cols-3 gap-8">
       @defer (when !isLoading) {
         @for (classroom of classrooms; track classroom.id) {
@@ -75,8 +79,7 @@
       class="shadow-sidebar flex h-full min-h-60 flex-col items-center justify-center gap-3 rounded-2xl bg-white"
     >
       <div>Right Side</div>
-      <button mat-button (click)="createClassroom()">Create</button>
-      <button mat-button (click)="logout()">Log out</button>
+      <button mat-button disableRipple (click)="logout()">Log out</button>
     </div>
   </div>
 </div>

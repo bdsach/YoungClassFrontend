@@ -1,9 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../../shared/services/auth/auth.service';
-import { ClassroomService } from '../../shared/services/classroom/classroom.service';
-import { Classroom } from '../../shared/models/Classroom';
+import { AuthService } from '@shared/services/auth/auth.service';
+import { ClassroomService } from '@shared/services/classroom/classroom.service';
+import { Classroom } from '@shared/models/Classroom';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 
 // interface Classroom {
 //   id: string;
@@ -15,44 +23,62 @@ import { Classroom } from '../../shared/models/Classroom';
 
 @Component({
   selector: 'app-classrooms',
-  imports: [RouterModule, MatButton],
+  imports: [RouterModule, MatButton, ReactiveFormsModule],
   templateUrl: './classrooms.component.html',
   styleUrl: './classrooms.component.scss',
 })
 export class ClassroomsComponent implements OnInit {
   isLoading = false;
   classrooms: Classroom[] = [];
+  classroomForm: FormGroup;
+  readonly dialog = inject(MatDialog);
 
-  constructor(private authService: AuthService, private classroomService: ClassroomService) {}
+  constructor(
+    private authService: AuthService,
+    private classroomService: ClassroomService,
+    private fb: FormBuilder,
+  ) {
+    this.classroomForm = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      category: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
     this.getAllClassroom();
   }
 
   getAllClassroom() {
-    this.isLoading = true
+    this.isLoading = true;
     this.classroomService.getAllClassroom().subscribe({
       next: (data: Classroom[]) => {
         this.classrooms = data;
-        this.isLoading = false
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('Error fetching classrooms', err);
-      }
-    })
+      },
+    });
   }
 
-  createClassroom() {
-    this.classroomService.createClassroom().subscribe({
-      next: () => {
-        console.log('Classroom created successfull')
-        alert('✅ Classroom created successfully!');
-        this.getAllClassroom();
+  openCreateDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string,
+  ): void {
+    console.log('openCreateDialog Clicked.');
+    const dialogRef = this.dialog.open(CreateDialogComponent, {
+      width: '400px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        animal: 'panda',
       },
-      error: (err) => {
-        console.error("❌ Error on create Classroom", err)
-        alert("❌ Error on create Classroom")
-      }
+      autoFocus: false,
+    });
+
+    dialogRef.componentInstance.classroomCreated.subscribe(() => {
+      this.getAllClassroom();
     });
   }
 
@@ -67,42 +93,6 @@ export class ClassroomsComponent implements OnInit {
   //     subject: 'คอมพิวเตอร์',
   //     studentCount: 0,
   //     color: 'purple',
-
   //   },
-  //   {
-  //     id: '2',
-  //     level: 'ป.2/1',
-  //     subject: 'วิทยาศาสตร์',
-  //     studentCount: 25,
-  //     color: 'red',
-  //   },
-  //   {
-  //     id: '3',
-  //     level: 'ป.3/1',
-  //     subject: 'คณิตศาสตร์',
-  //     studentCount: 30,
-  //     color: 'purple',
-  //   },
-  //   {
-  //     id: '4',
-  //     level: 'ป.4/2',
-  //     subject: 'ภาษาไทย',
-  //     studentCount: 22,
-  //     color: 'yello',
-  //   },
-  //   {
-  //     id: '5',
-  //     level: 'ป.5/1',
-  //     subject: 'อังกฤษ',
-  //     studentCount: 27,
-  //     color: 'purple',
-  //   },
-  //   {
-  //     id: '6',
-  //     level: 'ป.6/1',
-  //     subject: 'สังคมศึกษา',
-  //     studentCount: 18,
-  //     color: '#0EA5E9',  
-  //   },
-  // ];  
+  // ];
 }
