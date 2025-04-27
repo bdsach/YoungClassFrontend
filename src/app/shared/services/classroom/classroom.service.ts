@@ -19,11 +19,7 @@ export class ClassroomService {
     return this.http.get<Classroom>(`${this.apiUrl}/${id}`);
   }
 
-  createClassroom() {
-    return this.http.post<CreateClassroom>(this.apiUrl, {
-      name: 'Test Create Hardcode',
-      description: 'DescriptionTest Create Hardcode',
-      category: 'Thai',
-    });
+  createClassroom(body: CreateClassroom) {
+    return this.http.post<CreateClassroom>(this.apiUrl, body);
   }
 }
