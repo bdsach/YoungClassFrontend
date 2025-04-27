@@ -6,7 +6,6 @@ export interface Classroom {
 }
 
 export interface CreateClassroom {
-  id: number;
   name: string;
   description: string;
   category: string;
