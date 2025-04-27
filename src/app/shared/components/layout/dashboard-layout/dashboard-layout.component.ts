@@ -10,6 +10,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 export class DashboardLayoutComponent {
   opened: boolean = true;
 
+  // constructor(private ) {}
+
   toggleSidebar(): void {
     this.opened = !this.opened;
   }

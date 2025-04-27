@@ -11,3 +11,16 @@ export interface CreateClassroom {
   category: string;
 }
 
+// export interface CreateEnrollmentRequest {
+//   userName: string
+//   email: string
+//   classroomId: number
+// }
+
+export interface BulkEnrollmentRequest {
+  enrollments: {
+    userName: string;
+    email: string;
+  }[];
+  classroomId: number;
+}

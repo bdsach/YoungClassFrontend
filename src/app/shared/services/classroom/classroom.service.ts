@@ -1,4 +1,8 @@
-import { Classroom, CreateClassroom } from '../../models/Classroom';
+import {
+  BulkEnrollmentRequest,
+  Classroom,
+  CreateClassroom,
+} from '@shared/models/Classroom';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -21,5 +25,22 @@ export class ClassroomService {
 
   createClassroom(body: CreateClassroom) {
     return this.http.post<CreateClassroom>(this.apiUrl, body);
+  }
+
+  // enrollment() {
+  //   return this.http.post<CreateEnrollmentRequest>(
+  //     `http://localhost:5271/api/classrooms-enrollments/65`,
+  //     {
+  //       userName: 'studentone',
+  //       email: 'studentone@email.com',
+  //     },
+  //   );
+  // }
+
+  bulkEnrollment(classroomId: number, body: BulkEnrollmentRequest) {
+    return this.http.post<BulkEnrollmentRequest>(
+      `http://localhost:5271/api/classrooms-enrollments/${classroomId}/bulk`,
+      body,
+    );
   }
 }

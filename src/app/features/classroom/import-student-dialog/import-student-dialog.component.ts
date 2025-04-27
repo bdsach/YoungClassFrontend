@@ -14,10 +14,11 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { Student } from '../classroom.component';
+import { Student } from '@shared/models/Student';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ClassroomService } from '@shared/services/classroom/classroom.service';
 
 @Component({
   selector: 'app-import-student-dialog',
@@ -49,7 +50,7 @@ export class ImportStudentDialogComponent {
     lastName: 'สกุล',
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private classroomService: ClassroomService) {
     this.studentForm = this.fb.group({
       no: ['', Validators.required],
       firstName: ['', Validators.required],
@@ -57,13 +58,36 @@ export class ImportStudentDialogComponent {
     });
   }
 
-  addStudent() {
+  addStudentToList() {
     if (this.studentForm.valid) {
       const student: Student = this.studentForm.value;
       this.students.push(student);
       this.studentForm.reset();
     }
   }
+  
+  createStudent() {
+    const classroomId = this.data.classroomId;
+    const body = {
+      classroomId,
+      enrollments: this.students.map((student) => ({
+        userName: student.firstName + student.lastName,
+        email: `${student.firstName.toLowerCase()}.${student.lastName.toLowerCase()}@email.com`, // สมมติ auto gen email ง่ายๆ
+      })),
+    };
+
+    this.classroomService.bulkEnrollment(classroomId, body).subscribe({
+      next: () => {
+        console.log("bulk create students successfully.");
+        this.dialogRef.close();
+      },
+      error: (err) => {
+        console.log("error on bulk create students", err);
+        alert("error on bulk create students");
+      }
+    });
+  }
+  
 
   onSelectedCsvFile(event: Event) {
     const input = event.target as HTMLInputElement;

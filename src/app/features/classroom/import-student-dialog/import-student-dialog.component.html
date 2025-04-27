@@ -4,7 +4,7 @@
 <mat-dialog-content>
   <form
     [formGroup]="studentForm"
-    (ngSubmit)="addStudent()"
+    (ngSubmit)="addStudentToList()"
     class="grid grid-cols-8 gap-4"
   >
     <div class="col-span-1">
@@ -111,8 +111,8 @@
   <button
     disableRipple
     mat-flat-button
-    mat-dialog-close
-    [disabled]="false"
+    [disabled]="students.length === 0"
+    (click)="createStudent()"
   >
     ยืนยัน
   </button>

@@ -5,12 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ImportStudentDialogComponent } from './import-student-dialog/import-student-dialog.component';
-
-export interface Student {
-  id: number;
-  firstName: string;
-  lastName: string;
-}
+import { Student } from '@shared/models/Student';
 
 const STUDENTS_DATA: Student[] = [
   { id: 1, firstName: 'สมชาย', lastName: 'ทองดี' },
@@ -78,6 +73,9 @@ export class ClassroomComponent {
       enterAnimationDuration,
       exitAnimationDuration,
       autoFocus: false,
+      data: {
+        classroomId: Number(this.id()),
+      },
     });
   }
 }
