@@ -49,10 +49,21 @@ div[matformfieldlineripple] {
   display: none;
 }
 
+// Input field
 .mat-mdc-text-field-wrapper.mdc-text-field {
   border-radius: $border-radius;
   padding: 0 $border-radius;
 }
+
+mat-label {
+  font-family: var(--font-ibm-plex-sans-thai);
+}
+
+input.mdc-text-field__input.mdc-text-field__input {
+  font-family: var(--font-ibm-plex-sans-thai);
+  font-weight: 400;
+}
+
 
 // button[mat-flat-button] {
 //   border-radius: $border-radius;
@@ -62,19 +73,19 @@ div[matformfieldlineripple] {
 button.mdc-button {
   // padding: 1.3rem 1.8rem;
   font-family: var(--font-ibm-plex-sans-thai);
-  border: 1px solid var(--color-primary);
+  // border: 1px solid var(--color-primary);
 }
 
-button[dialog-cancel-btn].mat-mdc-outlined-button:not(:disabled) {
-  background-color: transparent;
-  border: 1px solid black;
-  .mdc-button__label {
-    color: black;
-  }
-  &:hover {
-    background-color: rgb(0, 0, 0, 0.009);
-  }
-}
+// button[dialog-cancel-btn].mat-mdc-outlined-button:not(:disabled) {
+//   background-color: transparent;
+//   border: 1px solid black;
+//   .mdc-button__label {
+//     color: black;
+//   }
+//   &:hover {
+//     background-color: rgb(0, 0, 0, 0.009);
+//   }
+// }
 
 button[dialog-confirm-delete-btn].mat-mdc-unelevated-button:not(:disabled) {
   background-color: #dc3646;

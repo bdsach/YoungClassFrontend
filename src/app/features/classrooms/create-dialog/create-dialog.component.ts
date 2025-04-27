@@ -7,12 +7,22 @@ import {
 } from '@angular/forms';
 import { CreateClassroom } from '@shared/models/Classroom';
 import { ClassroomService } from '@shared/services/classroom/classroom.service';
+import { MatButton } from '@angular/material/button';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-create-dialog',
-  imports: [ReactiveFormsModule, MatDialogContent, MatDialogTitle],
+  imports: [
+    ReactiveFormsModule,
+    MatDialogContent,
+    MatDialogTitle,
+    MatButton,
+    MatInputModule,
+    MatFormFieldModule,
+  ],
   templateUrl: './create-dialog.component.html',
   styleUrl: './create-dialog.component.scss',
 })

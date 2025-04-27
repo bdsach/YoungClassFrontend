@@ -3,33 +3,38 @@
 </h2>
 <mat-dialog-content>
   <form [formGroup]="classroomForm" (ngSubmit)="onSubmitCreate()" class="py-10">
-    <div>
-      <label for="name">Classroom Name</label>
+    <mat-form-field class="w-full">
+      <mat-label for="name">ชื่อห้องเรียน</mat-label>
       <input
+        matInput
         id="name"
         formControlName="name"
         placeholder="Enter classroom name"
       />
-    </div>
+    </mat-form-field>
 
-    <div>
-      <label for="description">Description</label>
+    <mat-form-field class="w-full">
+      <mat-label for="description">Description</mat-label>
       <input
+        matInput
         id="description"
         formControlName="description"
         placeholder="Enter classroom description"
       />
-    </div>
+    </mat-form-field>
 
-    <div>
-      <label for="category">Category</label>
+    <mat-form-field class="w-full">
+      <mat-label for="category">Category</mat-label>
       <input
+        matInput
         id="category"
         formControlName="category"
         placeholder="Enter category"
       />
-    </div>
+    </mat-form-field>
 
-    <button type="submit" [disabled]="classroomForm.invalid">สร้าง</button>
+    <div>
+      <button class="w-full" mat-flat-button type="submit" [disabled]="classroomForm.invalid">สร้าง</button>
+    </div>
   </form>
 </mat-dialog-content>
