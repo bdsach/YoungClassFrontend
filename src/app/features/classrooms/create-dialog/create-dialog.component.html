@@ -1,0 +1,35 @@
+<h2 mat-dialog-title class="text-center">
+  <span class="text-center font-semibold">สร้างห้องเรียน</span>
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="classroomForm" (ngSubmit)="onSubmitCreate()" class="py-10">
+    <div>
+      <label for="name">Classroom Name</label>
+      <input
+        id="name"
+        formControlName="name"
+        placeholder="Enter classroom name"
+      />
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <input
+        id="description"
+        formControlName="description"
+        placeholder="Enter classroom description"
+      />
+    </div>
+
+    <div>
+      <label for="category">Category</label>
+      <input
+        id="category"
+        formControlName="category"
+        placeholder="Enter category"
+      />
+    </div>
+
+    <button type="submit" [disabled]="classroomForm.invalid">สร้าง</button>
+  </form>
+</mat-dialog-content>
