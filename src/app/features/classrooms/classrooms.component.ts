@@ -12,6 +12,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CreateDialogComponent } from './create-dialog/create-dialog.component';
+import { Title } from '@angular/platform-browser';
 
 // interface Classroom {
 //   id: string;
@@ -37,12 +38,14 @@ export class ClassroomsComponent implements OnInit {
     private authService: AuthService,
     private classroomService: ClassroomService,
     private fb: FormBuilder,
+    private titleService: Title
   ) {
     this.classroomForm = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
       category: ['', Validators.required],
     });
+    this.titleService.setTitle('ห้องเรียนทั้งหมด');
   }
 
   ngOnInit(): void {

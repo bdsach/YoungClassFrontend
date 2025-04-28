@@ -1,11 +1,12 @@
-import { Component, inject, input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Student } from '@shared/models/Student';
 import { MatDialog } from '@angular/material/dialog';
-import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ImportStudentDialogComponent } from './import-student-dialog/import-student-dialog.component';
-import { Student } from '@shared/models/Student';
+import { Component, inject, input, OnInit } from '@angular/core';
 
 const STUDENTS_DATA: Student[] = [
   { id: 1, firstName: 'สมชาย', lastName: 'ทองดี' },
@@ -36,13 +37,19 @@ const STUDENTS_DATA: Student[] = [
   templateUrl: './classroom.component.html',
   styleUrl: './classroom.component.scss',
 })
-export class ClassroomComponent {
+export class ClassroomComponent implements OnInit {
   readonly id = input<string>();
   readonly dialog = inject(MatDialog);
 
 
   students: Student[] = STUDENTS_DATA;
   totalGroup: number = 3;
+
+  constructor(private titleService: Title) { }
+
+  ngOnInit(): void {
+    this.titleService.setTitle(`${this.id()}`);
+  }
 
   get idValue(): string {
     return this.id() ?? '';
