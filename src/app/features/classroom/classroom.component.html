@@ -5,12 +5,12 @@
         <div class="section flex flex-col gap-3 pb-10">
           <!-- <h1 class="text-3xl font-semibold">ห้องเรียน {{ id() }}</h1> -->
           <div>
-            @for (student of students; track student.id) {
+            @for (student of students; track student.studentId) {
               <div
                 class="group hover:border-primary hover:bg-primary-subtle my-3 grid cursor-pointer grid-cols-12 items-center rounded-lg border-[1px] border-slate-200 p-2 transition-all duration-300 hover:shadow"
               >
                 <div class="col-span-1 text-center">
-                  {{ student.id }}
+                  {{ student.studentId }}
                 </div>
                 <div class="col-span-1">
                   <img

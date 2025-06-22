@@ -89,16 +89,16 @@
       <div class="col-span-1 text-center">เลขที่</div>
       <div class="col-span-7 text-center">ชื่อ - สกุล</div>
     </li>
-    @for (student of students; track student.id) {
+    @for (student of students; track $index) {
       <li class="grid grid-cols-8">
         <div class="col-span-1 text-center">
-          {{ student.id }}
+          {{ student.studentId }}
         </div>
         <div class="col-span-2aa">
-          {{ student.firstName }}
+          {{ student.firstNameTh }}
         </div>
         <div class="col-span-2a">
-          {{ student.lastName }}
+          {{ student.lastNameTh }}
         </div>
       </li>
     }

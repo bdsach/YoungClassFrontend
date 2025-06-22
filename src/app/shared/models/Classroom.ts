@@ -1,8 +1,12 @@
+import { Student } from './Student';
+
 export interface Classroom {
   id: number;
-  name: string;
-  description: string;
-  category: string;
+  subject: string;
+  gradeLevel: string;
+  room: string;
+  subjectGroup: string;
+  students: Student[];
 }
 
 export interface CreateClassroom {

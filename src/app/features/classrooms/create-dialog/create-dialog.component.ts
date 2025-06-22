@@ -36,9 +36,11 @@ export class CreateDialogComponent {
     private dialogRef: MatDialogRef<CreateDialogComponent>,
   ) {
     this.classroomForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      category: ['', Validators.required],
+      subject: ['', Validators.required],
+      gradeLevel: ['', Validators.required],
+      room: ['', Validators.required],
+      subjectGroup: ['', Validators.required]
+      // description: ['', Validators.required],
     });
   }
 
